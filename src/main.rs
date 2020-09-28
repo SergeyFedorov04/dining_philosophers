@@ -7,12 +7,22 @@ impl Philosopher {
             name: name.to_string(),
         }
     }
+
+    fn eat(&self) {
+        println!("{} закончила есть.", self.name);
+    }
 }
 
 fn main() {
-    let p1 = Philosopher::new("Джудит Батлер");
-    let p2 = Philosopher::new("Рая Дунаевская");
-    let p3 = Philosopher::new("Зарубина Наталья");
-    let p4 = Philosopher::new("Эмма Гольдман");
-    let p5 = Philosopher::new("Анна Шмидт");
+    let philosophers = vec![
+        Philosopher::new("Джудит Батлер"),
+        Philosopher::new("Рая Дунаевская"),
+        Philosopher::new("Зарубина Наталья"),
+        Philosopher::new("Эмма Гольдман"),
+        Philosopher::new("Анна Шмидт"),
+    ];
+
+    for p in &philosophers {
+        p.eat();
+    }
 }
